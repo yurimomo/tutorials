@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %>|Ruby on Rails Tutorial Sample App</title>
+    <title><%= full_title(yield(:title)) %></title>
+    <!-- viewに:title定義されてる -->
+    <!-- helperにmodule_full_title定義されてる -->
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
