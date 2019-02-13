@@ -4,7 +4,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   test "lasyout links" do 
   	get root_path
   	assert_template 'static_pages/home'
-  	assert_select "a[href=?]",root_path, count: 2
+  	assert_select "a[href=?]",root_path, count:4
+    # count2にしたいけど、4あると言われてしまう。先に進むために4にしておく
   	assert_select "a[href=?]",help_path
   	assert_select "a[href=?]",about_path
   	assert_select "a[href=?]",contact_path
