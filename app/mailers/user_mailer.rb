@@ -10,8 +10,8 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Account activation"
   end
   def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    # ArgumentError: wrong number of arguments (given 1, expected 0)
+    @user = user
+    mail to: user.email, subject: "Password reset"
   end
 end
