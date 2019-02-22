@@ -27,6 +27,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   	                                  email: @user.email }}
   	assert flash.empty?
   	assert_redirected_to root_url
+  	# test updateとeditがExpected false to be truthyってエラー出てる。わからないので先進む
   end
 
   test "should redirect destroy when not logged in" do
@@ -42,6 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   		delete user_path(@user)
   	end
   	assert_redirected_to root_url
+  	# このリダイレクトがhttp://www.example.com/がいいのにhttp://www.example.com/loginらしい
   end
 
   # test "should get new" do
